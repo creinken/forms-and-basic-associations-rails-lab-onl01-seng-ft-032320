@@ -13,7 +13,6 @@ class Song < ActiveRecord::Base
   end
 
   def notes_attributes=(notehash)
-    binding.pry
       notehash.each do |note|
         @note = self.notes.new(content: note[:content])
         if !@note.content.blank?
